@@ -1,10 +1,22 @@
 package com.example.controllers;
 
-import java.lang.annotation.Annotation;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.AbstractController;
 
 @Controller
 public class FirstController {
+
+	protected ModelAndView handleRequestInternal(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
+		
+		ModelAndView modelAndView = new ModelAndView("My first controller");
+		modelAndView.addObject("To print", "Just a plain String object");
+		
+		return modelAndView;
+	}
 	
 	
 

@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-    
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Welcome</title>
-	</head> 
-	<body>
-		<h2>${message}</h2>
-	</body>
+<body>
+<h1>Welcome</h1>
+<h3>Another thing though, this ${person.name} guy is really ${person.age} years old</h3>
+<h3>Boron on ${person.dob}. you can call him on ${person.phoneNumber}</h3>
+<h3>Some of his skills include${person.age}</h3>
+</body>
 </html>

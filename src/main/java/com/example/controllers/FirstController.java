@@ -1,23 +1,32 @@
 package com.example.controllers;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.AbstractController;
+
+import com.example.domain.Person;
+ 
 
 @Controller
-public class FirstController {
+public class FirstController{
 
-	protected ModelAndView handleRequestInternal(HttpServletRequest arg0, HttpServletResponse arg1) throws Exception {
-		
-		ModelAndView modelAndView = new ModelAndView("My first controller");
-		modelAndView.addObject("To print", "Just a plain String object");
-		
+	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
+	protected ModelAndView handleRequestInternal(){
+		System.out.println("In the controller");
+		ModelAndView modelAndView = new ModelAndView("computation");
 		return modelAndView;
 	}
 	
+	@RequestMapping(value = "/formSubmit.html", method = RequestMethod.POST)
+	public ModelAndView newMethod(@ModelAttribute("person") Person person){
+		
+		ModelAndView andView = new ModelAndView("showMessage");
+		return andView;
+	}
 	
-
 }

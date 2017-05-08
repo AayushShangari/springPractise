@@ -11,9 +11,12 @@
             base-package="com.example"/> 
 
     <mvc:annotation-driven />     
+    
+    <mvc:interceptors>
+    <bean class = "com.example.controllers.MyFirstInterceptor"/>
+    </mvc:interceptors>
       
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	        <!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
 	        <property name="prefix">
 	        	<value>/WEB-INF/view/</value>
 	        </property> 
